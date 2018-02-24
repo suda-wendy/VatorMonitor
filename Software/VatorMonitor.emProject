@@ -1,0 +1,87 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="VatorMonitor" target="8" version="2">
+  <project Name="VatorMonitor">
+    <configuration
+      Name="Common"
+      Placement="Flash"
+      Target="STM32F103VE"
+      arm_architecture="v7M"
+      arm_core_type="Cortex-M3"
+      arm_endian="Little"
+      arm_fpu_type="None"
+      arm_interwork="No"
+      arm_linker_heap_size="256"
+      arm_linker_process_stack_size="0"
+      arm_linker_stack_size="256"
+      arm_simulator_memory_simulation_parameter="ROM;0x08000000;0x00080000;RAM;0x20000000;0x00010000"
+      arm_target_debug_interface_type="ADIv5"
+      arm_target_device_name="STM32F103VE"
+      arm_target_interface_type="SWD"
+      c_preprocessor_definitions="STM32F10X_HD;__STM32F1xx_FAMILY;__STM32F103_SUBFAMILY;ARM_MATH_CM3;FLASH_PLACEMENT=1;USE_HAL_DRIVER;STM32F103xE"
+      c_user_include_directories="$(ProjectDir)/Inc;$(ProjectDir)/Segger;$(ProjectDir)/Drivers/CMSIS/Include;$(ProjectDir)/Drivers/CMSIS/Device/ST/STM32F1xx/Include;$(ProjectDir)/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;$(ProjectDir)/Drivers/STM32F1xx_HAL_Driver/Inc"
+      debug_register_definition_file="$(ProjectDir)/Tools/STM32F103xx_Registers.xml"
+      debug_target_connection="J-Link"
+      file_codec="UTF-8"
+      gcc_enable_all_warnings="Yes"
+      gcc_entry_point="Reset_Handler"
+      linker_memory_map_file="$(ProjectDir)/Tools/STM32F103VE_MemoryMap.xml"
+      linker_section_placement_file="$(ProjectDir)/Tools/flash_placement.xml"
+      macros="DeviceHeaderFile=$(PackagesDir)/STM32F1xx/CMSIS/Device/Include/stm32f10x.h;DeviceLibraryIdentifier=M3l;DeviceSystemFile=$(PackagesDir)/STM32F1xx/CMSIS/Device/Source/system_stm32f10x.c;DeviceVectorsFile=$(PackagesDir)/STM32F1xx/Source/STM32F103xx_Vectors.s;DeviceFamily=STM32F1xx;DeviceSubFamily=STM32F103;Target=STM32F103VE;Placement=Flash"
+      package_dependencies="STM32F1xx"
+      project_directory=""
+      project_type="Executable"
+      target_reset_script="Reset();"
+      target_trace_initialize_script="EnableTrace(&quot;$(TraceInterfaceType)&quot;)" />
+    <folder Name="RTT Files">
+      <file file_name="Segger/SEGGER_RTT.c" />
+      <file file_name="Segger/SEGGER_RTT_SES.c" />
+    </folder>
+    <folder Name="Script Files">
+      <file file_name="STM32F1xx_Target.js">
+        <configuration Name="Common" file_type="Reset Script" />
+      </file>
+    </folder>
+    <folder Name="Source Files">
+      <configuration Name="Common" filter="c;cpp;cxx;cc;h;s;asm;inc" />
+      <file file_name="Src/main.c" />
+      <file file_name="Src/stm32f1xx_hal_msp.c" />
+      <file file_name="Src/stm32f1xx_it.c" />
+      <file file_name="Src/system_stm32f1xx.c" />
+    </folder>
+    <folder Name="System Files">
+      <file file_name="Startup/STM32F1xx_Startup.s" />
+      <file file_name="Startup/STM32F103xx_Vectors.s" />
+      <file file_name="Startup/thumb_crt0.s" />
+    </folder>
+    <folder Name="HAL">
+      <file file_name="Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c" />
+      <file file_name="Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c" />
+      <file file_name="Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c" />
+      <file file_name="Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c" />
+      <file file_name="Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c" />
+      <file file_name="Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c" />
+      <file file_name="Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c" />
+      <file file_name="Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c" />
+      <file file_name="Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c" />
+      <file file_name="Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c" />
+      <file file_name="Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc.c" />
+      <file file_name="Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc_ex.c" />
+      <file file_name="Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c" />
+      <file file_name="Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi_ex.c" />
+      <file file_name="Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c" />
+      <file file_name="Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c" />
+      <file file_name="Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c" />
+    </folder>
+  </project>
+  <configuration
+    Name="Debug"
+    c_preprocessor_definitions="DEBUG"
+    gcc_debugging_level="Level 3"
+    gcc_optimization_level="None" />
+  <configuration
+    Name="Release"
+    c_preprocessor_definitions="NDEBUG"
+    gcc_debugging_level="None"
+    gcc_omit_frame_pointer="Yes"
+    gcc_optimization_level="Level 1" />
+</solution>
